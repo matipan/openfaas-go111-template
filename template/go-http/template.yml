@@ -1,0 +1,2 @@
+language: go-http
+fprocess: ./handler
