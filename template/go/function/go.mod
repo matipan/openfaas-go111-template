@@ -1,1 +1,1 @@
-module handler/function
+module handler
