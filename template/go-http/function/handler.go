@@ -2,12 +2,12 @@ package function
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
-
-	"github.com/google/uuid"
 )
 
 // Handle a serverless request
 func Handle(w http.ResponseWriter, r *http.Request) {
-	return fmt.Fprintf(w, "Hello. Your UUID is: %s", uuid.New().String())
+	b, _ := ioutil.ReadAll(r.Body)
+	fmt.Fprintf(w, "Hello. You said: %s", string(b))
 }
