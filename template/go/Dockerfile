@@ -15,6 +15,8 @@ WORKDIR /handler
 COPY . .
 
 RUN mv ./function/go.mod .
+RUN mv ./function/go.sum . || :
+RUN mv ./function/vendor . || :
 RUN go mod vendor
 
 # Run a gofmt and exclude all vendored code.
